@@ -28,3 +28,39 @@ def Prime(n,i=2):
 
 n=int(input())
 print(Prime(n))
+
+
+
+2.	Count prime(204)
+    class Solution:
+    def countPrimes(self, n: int) -> int:
+        if n>2:
+            pri=[True for i in range(n)]
+            p=2
+            pri[0]=False
+            pri[1]=False
+            while(p*p<=n):
+                if pri[p]==True:
+                    for i in range(p*p,n,p):
+                        pri[i]=False
+                p+=1
+            return pri.count(True)
+        else:
+            return 0
+
+
+
+3.	Prime numbers of set bits in binary representation(762).
+    class Solution(object):
+    def countPrimeSetBits(self, left, right):
+        cnt=0
+        for i in range(left,right+1):
+            b=bin(i)
+            c=0
+            k=b.count('1')
+            for i in range(2,k):
+                if k%i==0:
+                    c+=1
+            if c==0 and k!=1:
+                cnt+=1
+        return cnt
