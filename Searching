@@ -1,0 +1,80 @@
+1.	Linear Search with functions>>>
+'''sequencial data or multiple data then searching comes to the picture'''
+‘’’It will be used in data having unordered …if ordered data/sequential ordered use binary search’’’ 
+
+def linear(l,n):
+    for i in range(len(l)):
+        if l[i]==n:
+            return i
+    return -1
+
+
+l=list(map(int,input().split()))
+n=int(input())
+
+t=linear(l,n)
+if t==-1:
+    print("no element")
+else:
+    print("Eleement found at ",t)
+
+===========================================================
+def linear(l,n):
+    for i in range(len(l)):
+        if l[i]==n:
+            return True
+    return False
+
+
+l=list(map(int,input().split()))
+n=int(input())
+print(linear(l,n))
+
+
+
+
+
+
+
+
+
+
+
+
+2.BINARY SEARCH WITH FUNCTION AND RECURION
+
+Recursion>>>
+
+def binary(l,n,lw,h):
+    m=(lw+h)//2
+    if l[m]==n:
+        return m
+    elif l[m]>n:
+        return binary(l,n,lw,m)
+    elif l[m]<n:
+        return binary(l,n,m,h)
+
+
+l=list(map(int,input().split()))
+n=int(input())
+print(binary(l,n,0,len(l)-1))
+======================================
+
+Non recursion >>>
+
+def binary(a,t):
+    l=0
+    h=len(a)-1
+    m=(l+h)//2
+    while True:
+        if a[m]==t:
+            return True
+        elif a[m]<t:
+            l=m+1
+        elif a[m]>t:
+            h=m-1
+        m=(l+h)//2
+
+l=list(map(int,input().split()))
+n=int(input())
+print(binary(l,n))
