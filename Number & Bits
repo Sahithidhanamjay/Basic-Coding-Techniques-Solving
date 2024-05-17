@@ -1,0 +1,55 @@
+1. POWER OF 2>>>
+return True if n&(n-1)==0 and n>0 else False
+It return  True if the number which can be written in power of 2,else returns false.
+
+Method-2:
+  class Solution:
+    def isPowerOfTwo(self, n: int) -> bool:
+        if n==0:
+           return False
+        while(n!=1):
+            if n%2!=0:
+                return False
+            n=n//2
+        return True
+        
+
+2. NUMBER OF 1 BIT>>>
+  class Solution:
+    def hammingWeight(self, n: int) -> int:
+        c=0
+        while n!=0:
+            s=n&1
+            if s==1:
+                c+=1
+            n=n>>1
+        return c
+
+
+3. SINGLE NUMBER>>>
+  class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        s=0
+        for i in nums:
+            s=s^i
+        return s
+
+
+4. MINIMUM BIT FLIPS TO CONVERT NUMBERS>>>
+  class Solution:
+    def minBitFlips(self, start: int, goal: int) -> int:
+        s=bin(start^goal).count('1')
+        return s
+
+
+5.POWER OF 4>>>
+  class Solution:
+    def isPowerOfFour(self, n: int) -> bool:
+        if(n==0):
+            return False
+        while(n!=1):
+            if(n%4!=0):
+                return False
+            n=n//4
+        return True 
+
