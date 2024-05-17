@@ -1,0 +1,70 @@
+1.	No of subarrays and subarrays of an array
+def subarray(l):
+    m=[]
+    for i in range(len(l)):
+        for j in range(i,len(l)):
+            m.append(l[i:j+1])
+    return m
+
+p=subarray([7,1,3,4])
+print(p)
+print("No of subarrays:",len(p))
+
+Here we are having the 3 loops that is i,j,slice operator…
+So time complexity is O(n^3)
+
+=================================================================
+
+Method-2:
+
+def subarray(l):
+    for i in range(len(l)):
+        print(l[i])
+        p=[]
+        p.append(l[i])
+        for j in range(i+1,len(l)):
+            p.append(l[j])
+            print(p)
+            
+
+subarray([7,1,3,4])
+
+time complexity is: O(n^2)
+
+
+
+2.
+def subarray(l,n):
+    for i in range(len(l)):
+        p=[]
+        q=[]
+        p.append(l[i])
+        print(p)
+        for j in range(i+1,len(l)):
+            p.append(l[j])
+            print(p)
+            if(sum(p)==n):
+               q.append(p)
+        print(q)
+            
+
+subarray([7,1,3,4],int(input()))
+
+
+
+3.	Sub arrays with an integer input to find the sub array with sum of elements equal to the input integer.
+l=[1,4,5,8,2,3,4]
+p=int(input())
+c=0
+d={}
+v=0
+for i in range(len(l)):
+    c=c+l[i]
+    d[c]=i
+    if c>=p:
+        v=c-p
+    if v in d.keys():
+        print(l[(d[v]+1):i+1])
+    if (c-p)==0:
+        print(l[0:i+1])
+print(d)
