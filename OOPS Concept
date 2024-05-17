@@ -1,0 +1,40 @@
+OOPS Concept:
+Object Oriented Programming Structure is used for code reusability, we might get the doubt then what is the use of the function as it is even used for the code reusability itself.
+But OOPS is high level to the function:
+
+Class is a collection of member functions and member variables. Every things are within the stack it self like:
+class:	car - Objects are : audi ,benz , hyundia, Maruti…etc
+Let’s think:
+ P=[1,2,3,4,5,6]
+Print(type(p))--- {class “list”}
+So we can say class contains an no of functions and where the functions are append, sort, etc.
+class sample():py(in python The public static void main is inbuild)
+class Sample():java
+Program:
+class sample():
+	A=sample()
+	B=sample()
+In the entire world a function cannot be run itself until and unless it is called
+But the constructor is a function is executed when an object is created.
+Object: Instance of the class
+
+Program:
+class sample():
+	def __init__():
+		print(“From constructor”)
+a=sample()
+Output:
+error
+
+Because the contructor need atleast 1 parameter.
+So we keep self
+
+Program:
+Class sample(self):
+	def __init__(self):
+		Print(“From constructor:”)
+A=sample()
+Print(A)
+
+Output:
+From Constructor
