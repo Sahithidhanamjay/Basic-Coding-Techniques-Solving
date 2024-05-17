@@ -53,3 +53,22 @@ Method-2:
             n=n//4
         return True 
 
+6.	Disarium number: (175,135)
+175 == (pow(1,1)+pow(7,2)+pow(5,3))
+
+7.	no of 1’s count of a binary number in the giveninput number range like if n=5 the need find the count the no of 1’s in 1,2,3,4,5 i.e 001,010,011,100,101. So the count will be 7. 
+def binconvertion(n):
+    	c=0
+   	 while(n):
+        		c+=(n&1)
+        		n>>=1
+    	return c
+
+n=int(input())
+s=0
+for i in range(1,n+1):
+    	p=binconvertion(i)
+    	print("In number ",i,"bin form",bin(i),"No of 1's is:",p)
+    	s+=p
+print("No of 1's in the gien number binary:",s)
+
