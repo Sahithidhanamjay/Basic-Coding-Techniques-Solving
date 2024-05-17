@@ -1,0 +1,18 @@
+Prefix sum is nothing but a kind of array which contains the sum of all elements before that element.
+The size of the given list is equal to the size of the prefix sum
+Method -2(Using prefix sum logic to find pivor index ):
+class Solution:
+    def pivotIndex(self, nums: List[int]) -> int:
+        p=[]
+        s=0
+        for i in range(len(nums)):
+            s+=nums[i]
+            p.append(s)
+        t=0
+        for i in range(len(nums)):
+            s-=nums[i]
+            if s==t:
+                return i
+            t+=nums[i]
+        else:
+            return -1
