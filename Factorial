@@ -1,0 +1,44 @@
+Factorial with functions
+def Fact(a):
+    s=1
+    for i in range(2,n+1):
+        s*=i
+    return(s)
+
+n=int(input())
+print(Fact(n))
+
+
+'''
+-> Output has to be in the function call
+-> Heirarically first there has to be function defintion and the function call
+-> None refers to that output is not returned anything
+-> if
+    {
+        def Fact(a):
+            s=1
+            for i in range(2,n+1):
+                s*=i
+            print(s)
+        
+        n=int(input())
+        s=Fact(n)
+        print(s)
+    }
+-> return must be the last statement of the code as after that any code will not be returned
+-> return do's 2 thing:	1. return the value 	2. Break the value
+-> Function definition and calling must not to be need in the same program
+-> 
+'''
+def Fact(a):
+    s=1
+    for i in range(2,a+1):
+        s*=i
+    return(s)
+
+l=[]
+l1=[4,5,3,7]
+for i in l1:
+    l.append(Fact(i))
+
+print(l)
