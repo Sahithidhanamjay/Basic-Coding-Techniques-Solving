@@ -1,0 +1,37 @@
+LCM>>>
+def lcm(a,b):
+    v=max(a,b)
+    i=v
+    while(True):
+        if i%a==0 and i%b==0:
+            return i
+        i+=v
+        
+
+a,b=map(int,input().split())
+print(lcm(a,b))
+
+
+
+
+==================================================================================
+
+def lcm(a,b):
+    v=max(a,b)
+    for i in range(v,a*b+1,v):
+        if i%a==0 and i%b==0:
+            return i
+        
+a,b=map(int,input().split())
+p=lcm(a,b)
+print(p)
+================================================
+def lcm(a,b,m,i):
+    if i%a==0 and i%b==0:
+        return i
+    else:
+        return lcm(a,b,m,i+m)
+
+a,b=map(int,input().split())
+c=max(a,b)
+print(lcm(a,b,c,) 
