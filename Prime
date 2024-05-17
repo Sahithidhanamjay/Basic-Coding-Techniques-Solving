@@ -1,0 +1,30 @@
+Prime using Recursion
+def Prime(i,n,c):
+    if i>n:
+        return c
+    if n%i==0:
+        c+=1
+        return Prime(i+1,n,c)
+    else:
+        return Prime(i+1,n,c)
+
+n=int(input())
+s=Prime(1,n,0)
+if s==2:
+    print("Prime")
+else:
+    print("Not Prime")
+========================================================================
+import math
+def Prime(n,i=2):
+    if n==2 or n==3:
+        return "Prime"
+    if n%i==0:
+        return "not Prime"
+    if i>=math.sqrt(n):
+        return "Prime"
+    return Prime(n,i+1)
+
+
+n=int(input())
+print(Prime(n))
