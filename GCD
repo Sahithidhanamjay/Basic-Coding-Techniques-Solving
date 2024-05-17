@@ -1,0 +1,50 @@
+
+4. GCD>>>
+'''import math
+a=int(input())
+b=int(input())
+print(math.gcd(a,b))'''
+========================================================================
+'''
+a,b=map(int,input().split())
+l1=[]
+l=[]
+for i in range(1,a+1):
+    if a%i==0:
+        l1.append(i)
+for i in range(1,b+1):
+    if b%i==0:
+        l1.append(i)
+
+l1=sorted(l1)
+
+for i in range(len(l1)-1):
+    if(l1[i]==l1[i+1]):
+        l.append(l1[i])
+
+print(max(l))
+
+'''
+=======================================================================
+def gcd(a,b):
+    if a>b:
+
+        a,b=b,a
+    for i in range(a,0,-1):
+        if a%i==0 and b%i==0:
+            return i
+    
+a,b=map(int,input().split())
+print(gcd(a,b))
+=======================================================================
+def gcdfun(a,b):
+    while True:
+        if a==0:
+            return(b)
+        a,b=b%a,a
+    
+    
+a,b=map(int,input().split())
+if a>b:
+    a,b=b,a
+print(gcdfun(a,b))			EUCLIDS ALGORITHM
