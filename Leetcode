@@ -1,0 +1,29 @@
+1. Find the Maximum and Minimum Number of the nodesbetween the critical points(2058)
+  # Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def nodesBetweenCriticalPoints(self, head: Optional[ListNode]) -> List[int]:
+        p = head
+        c = head.next
+        a = [-1,-1]
+        pp,cp,fp,ps=-1,-1,-1,0
+        while c.next is not None:
+            if (c.val<p.val and c.val<c.next.val) or (c.val>p.val and c.val>c.next.val):
+                pp = cp
+                cp = ps
+                if fp == -1:
+                    fp = ps
+                if pp != -1:
+                    if a[0] == -1:
+                        a[0] = cp -pp
+                    else:
+                        a[0] = min(a[0], cp-pp)
+                    a[1] = ps - fp
+            ps += 1
+            p = c
+            c = c.next
+        return a
+                
