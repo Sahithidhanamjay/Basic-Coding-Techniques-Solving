@@ -1,5 +1,14 @@
 Prefix sum is nothing but a kind of array which contains the sum of all elements before that element.
 The size of the given list is equal to the size of the prefix sum
+nums = [1, 7, 3, 6, 5, 6]
+Prefix sum array p is:
+p[0] = nums[0] = 1
+p[1] = nums[0] + nums[1] = 1+7 = 8
+p[2] = nums[0] + nums[1] + nums[2] = 8+3 = 11
+p[3] = 1+7+3+6 = 17
+So the prefix sum array becomes:
+p = [1, 8, 11, 17, 22, 28]
+
 Method -2(Using prefix sum logic to find pivor index ):
 class Solution:
     def pivotIndex(self, nums: List[int]) -> int:
